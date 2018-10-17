@@ -297,6 +297,9 @@ footer input::-ms-input-placeholder {
     font-size: 11px;
     color: #d8d8d8;
 }
+.add_news_modal input::-ms-input-placeholder {
+    color: #d8d8d8;
+}
 
 #file {
     width: 317px;
