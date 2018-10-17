@@ -259,6 +259,7 @@ footer input::-ms-input-placeholder {
     margin-bottom: 20px;
     border-radius: 2px;
     border: solid 1px #d8d8d8;
+    font-size: 11px;
 }
 .add_news_modal .send {
     font-size: 16px;
@@ -296,6 +297,7 @@ footer input::-ms-input-placeholder {
     font-size: 11px;
     color: #d8d8d8;
 }
+
 #file {
     width: 317px;
     height: 13px;
