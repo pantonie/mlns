@@ -13,7 +13,7 @@ header {
     background: no-repeat center url('./assets/bitmap.png');
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
     font-size: 11px;
     color: #ffffff;
@@ -31,14 +31,14 @@ title {
 }
 .header__center {
     text-align: center;
-    margin-top: -115px;
+    margin-top: 45px;
 }
 .addNews {
     display: flex;
     justify-content: space-between;
     width: 190px;
     border-bottom: 1px solid #ffffff;
-    margin-top: -25px;
+    margin-top: 25px;
 }
 
 nav {
@@ -330,16 +330,6 @@ footer input::-ms-input-placeholder {
 }
 .input_active {
     border: solid 1px #000000;
-}
-@supports (-ms-accelerator: true) { /* Edge only */
-
-    .header {
-        justify-content: space-around;
-    }
-    .footer_content {
-        justify-content: space-around;
-    }
-
 }
 @media screen and (max-width: 950px){
     nav {

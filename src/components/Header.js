@@ -13,6 +13,7 @@ function Header(props) {
                 <TodayIs header/>
             </div>
             {props.children}
+            <div></div>
         </header>
     )
 };
