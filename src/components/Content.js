@@ -8,8 +8,8 @@ import { withRouter } from 'react-router-dom';
     constructor(props){
         super(props);
         this.state = {
-            news: [],
-            currentPage: props.location.pathname.split('=')[1] || 1,
+            news: props.uploadedNews.slice(0,2),
+            currentPage: 1,
             total: props.uploadedNews.length || 0
         };
     }
@@ -24,11 +24,11 @@ import { withRouter } from 'react-router-dom';
      static getDerivedStateFromProps(props){
         return ({
             total: props.uploadedNews.length,
-            currentPage: props.location.pathname.split('=')[1]
+            currentPage: props.location.pathname.split('=')[1] || 1,
         })
     }
     render() {
-        const news = this.props.uploadedNews.slice(this.state.currentPage*2-2, this.state.currentPage*2);
+        const news = this.props.uploadedNews.slice(this.state.currentPage*2-2, this.state.currentPage*2) || this.state.news;
         return (
             <div className='news'>
                 <MainNews data={this.props.data.mainNews} categories={this.props.data.categories}/>
