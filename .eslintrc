@@ -1,0 +1,16 @@
+{
+  parser: "babel-eslint",
+  "plugins": ["react"],
+  "rules" : {
+    "react/prop-types": 0
+  },
+  "globals": {
+    "localStorage": true,
+    "document": true,
+    "require": true,
+    "window": true,
+    "setInterval": true,
+    "clearInterval": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}

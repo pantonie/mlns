@@ -1,3 +1,5 @@
+/* global FileReader */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
@@ -57,9 +59,9 @@ class AddNewsModal extends Component {
         div.removeAttribute('style');
 
     }
-    componentWillUpdate(prev, next){
+    componentDidUpdate(){
         const div = document.getElementById('send');
-        if(next.header && next.category && next.text && next.file){
+        if(this.state.header && this.state.category && this.state.text && this.state.file){
             div.setAttribute('style', 'color: #000000')
         } else {
             div.removeAttribute('style');
@@ -120,7 +122,7 @@ class AddNewsModal extends Component {
             </div>
         )
     }
-};
+}
 
 function mapDispatchToProps(dispatch) {
     return {

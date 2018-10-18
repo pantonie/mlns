@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import TodayIs from './TodayIs';
 
 function Header(props) {
@@ -16,6 +16,6 @@ function Header(props) {
             <div></div>
         </header>
     )
-};
+}
 
 export default Header;

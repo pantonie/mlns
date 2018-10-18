@@ -5,24 +5,24 @@ class TodayIs extends Component {
     constructor(props){
         super(props);
         this.state = {time: ''};
-    };
+    }
 
     tick() {
         const now = new Date();
         this.setState({time: `${now.getHours()}:${now.getMinutes()<10 ? '0'+now.getMinutes() : now.getMinutes()}`});
-    };
+    }
 
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         this.tick();
     }
 
     componentDidMount(){
         this.tickID = setInterval(()=> this.tick(), 10000);
-    };
+    }
 
     componentWillUnmount(){
         clearInterval(this.tickID)
-    };
+    }
 
     render(){
         const today = getDate();

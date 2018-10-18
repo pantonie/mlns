@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-export const MoreNews = ({nextPage, total}) => {
+export const MoreNews = ({total}) => {
     const pages = (total) => {
         let divs = [];
         for (let i=0; i < Math.ceil(total/2); i++){
             divs.push(
                 <Link to={`page=${i+1}`}  key={i}>
-                    <div /*onClick={() => nextPage(i+1)} */key={i}>{i+1}</div>
+                    <div key={i}>{i+1}</div>
                 </Link>
             )
         }

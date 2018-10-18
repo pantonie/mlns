@@ -15,7 +15,7 @@ class Nav extends Component {
             </nav>
         )
     }
-};
+}
 
 function mapDispatchToProps(dispatch) {
     return {

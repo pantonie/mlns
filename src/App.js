@@ -15,7 +15,7 @@ class App extends Component {
         document.getElementById('modal').style.display = 'block';
         document.getElementById('content').style.filter = 'blur(10px)';
         document.body.style.overflow = 'hidden';
-    };
+    }
 
     closeModal() {
         document.getElementById('modal').style.display = 'none';

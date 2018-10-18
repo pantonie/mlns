@@ -9,10 +9,9 @@ import { withRouter } from 'react-router-dom';
         super(props);
         this.state = {
             news: [],
-            currentPage: 1,
-            total: 0
+            currentPage: props.location.pathname.split('=')[1] || 1,
+            total: props.uploadedNews.length || 0
         };
-        this.nextPage = this.nextPage.bind(this);
     }
 
     componentDidMount(){
@@ -22,14 +21,11 @@ import { withRouter } from 'react-router-dom';
         }
         this.setState({total: this.props.uploadedNews.length})
     }
-    componentWillReceiveProps(next){
-        this.setState({total: next.uploadedNews.length})
-        this.setState({currentPage: next.location.pathname.split('=')[1]})
-    }
-    nextPage(page){
-        if (page === this.state.currentPage) return;
-        this.setState({news: this.props.uploadedNews.slice(page*2-2, page*2)})
-        this.setState({currentPage: page});
+     static getDerivedStateFromProps(props){
+        return ({
+            total: props.uploadedNews.length,
+            currentPage: props.location.pathname.split('=')[1]
+        })
     }
     render() {
         const news = this.props.uploadedNews.slice(this.state.currentPage*2-2, this.state.currentPage*2);
@@ -37,7 +33,7 @@ import { withRouter } from 'react-router-dom';
             <div className='news'>
                 <MainNews data={this.props.data.mainNews} categories={this.props.data.categories}/>
                 <OtherNews items={news} categories={this.props.data.categories} />
-                <MoreNews nextPage={this.nextPage} total={this.state.total}/>
+                <MoreNews total={this.state.total}/>
             </div>
         )
     }
